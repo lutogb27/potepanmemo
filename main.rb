@@ -6,13 +6,13 @@ memo_type = gets.to_i # ユーザーの入力値を取得し、数字へ変換�
  
 if memo_type == 1
   puts "新規でメモを作成します。拡張子を除いたファイル名を入力してください。"
-file_name = gets.chomp
+  file_name = gets.chomp
     
   puts"メモの内容を記入して下さい。Ctrl+Dで保存します。"
   imput_memo = STDIN.read
   memo = imput_memo.chomp
     
-  CSV.open('#{file_name}','w') do |csv|
+  CSV.open("#{file_name}.csv",'w') do |csv|
   csv << [memo]
 end
    
